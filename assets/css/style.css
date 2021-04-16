@@ -1,9 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 
-.yuxari_div, p {
+.upper-div, p {
     color: white;
     background-color: black;
     text-align: center;
@@ -14,48 +10,50 @@
     color: white;
     position: relative;
     text-align: center;
-    height: 600px;
+    width: 100%;
+    height: 500px;
 }
 
 .about{
     display: flex;
     justify-content: space-between;
-  
+    
 }
 
 .about_item{
-    margin-top: 200px;
+    margin-top: 90px;
     display: inline-block;
     margin-right: 20px;
+  
 }
 
-.about_img{
-    background: linear-gradient(to bottom,
-    #f38181, #fce38a);
-    
-}
 
-.button {
-    background-color: red; 
+.btn {
+    background-color: red;
     border: none;
     color: white;
-    margin-left: -60px;
-    padding: 15px 32px;
+    margin-left: -108px;
+    
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 12px;
+    font-size: 14px;
     position: absolute;
-    top: 450px;
-    padding: 8px 54px;
+    top: 355px;
+    padding: 14px 74px;
     border-radius: 12px
-    
+
+}
+
+.btn:hover {
+    background-color: rgb(100, 42, 42);
 }
 
 .inf{
     position: absolute;
     text-align: center;
-    top: 510px;
-    margin-left: 130px;
+    top: 430px;
+    margin-left: 85px;
+    
     
 }
