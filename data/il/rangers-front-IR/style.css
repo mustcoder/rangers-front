@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.social-menu-bar{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background-color: black;
+}
+.social_menu{
+    position: relative;
+    right: 180px;
+}
+.social_menu a{
+    color: blanchedalmond;
+    float: right;
+    margin:6px 10px;
+    background-color: none;
+    text-decoration: none;
+    
+}
+.social_menu a:hover{
+    color: #fff;
+}
+.social-menu-bar .button{
+    position: relative;
+    right: -160px;
+    top: 3px ;
+    
+}
+.social-menu-bar .button button{
+    float: right;
+    background-color: red;
+    color: cornsilk;
+    border: none;
+    border-radius: 12px;
+    width: 140px;
+    height: 23px;
+}
+.carousel {
+    top:-6px
+}
+.carousel-inner img{
+    width: 220vh;
+    height: 60vh;
+}
+.carousel-caption{
+    top:40%;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+.carousel-caption h2{
+    margin-bottom: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+.carousel-caption p{
+    font-size: small;
+    font-weight: bolder;
+}
+.carousel-caption button{
+    background: none;
+    border:none;
+    color: aliceblue;
+    background-color:red ;
+    border-radius: 12px;
+    width: 15%;
+    height: 20%;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
