@@ -10,7 +10,7 @@ router.get('/inner', function(req, res, next) {
 });
 
 router.get('/foo', function(req, res, next) {
-    res.render('index', {title: 'Foo Page'});
+    res.send("FOO PAGE!!");
 });
 
 module.exports = router;
