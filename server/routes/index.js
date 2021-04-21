@@ -9,6 +9,14 @@ router.get('/inner', function(req, res, next) {
     res.render('inner-page', {title: 'Inner Page'});
 });
 
+router.get('/root', function(req, res, next) {
+    res.render('root-page', {title: 'Root Page'});
+});
+
+router.get('/about', function(req, res, next) {
+    res.render('about-page', {title: 'About Page'});
+});
+
 router.get('/foo', function(req, res, next) {
     res.send("FOO PAGE!!");
 });

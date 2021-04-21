@@ -3,12 +3,14 @@ const express = require('express');
 const app = express();
 
 const routes = require('./routes');
+const appRoutes = require('./routes/app');
 
 app.use(express.static(path.join(__dirname, 'assets')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use('/', routes);
+app.use('/app', appRoutes);
 
 // app.use(function(req, res, next) {
 //     var err = new Error('Not Found');
