@@ -1,58 +1,35 @@
-#navbar p {
+/* leyla start */
+
+img{
+
+    margin-left: 30px;
+    margin-top: 20px;
+
+}
+
+#uppermenu p{
+
     margin-top: 20px;
     margin-right: 20px;
     font-size: 20px;
 
 }
 
-#navbar ul li > a {
+#uppermenu ul li>a{
+
     margin-top: 15px;
     font-size: 14px;
     text-decoration: none;
 
 }
 
-#navbar ul li>a:hover{
+#uppermenu ul li>a:hover{
 
     border-bottom: 6px solid #cd1719;
-    animation-duration: 0.6s;
 
 }
 
-#single-line{
-
-    font-size: 20px;
-    background-color: black;
-    height: 7vh;
-
-}
-
-#single-line>a{
-
-    padding: 15px 4px;
-    text-decoration: none;
-
-}
-
-#single-line a:hover{
-
-    color: #cd1719;
-
-}
-
-#single-line button{
-
-    margin: -1px 40px 5px 10px;
-    background-color: #cd1719;
-    border: 0;
-
-}
-
-#single-line>button:hover{
-
-    background-color: #333;
-
-}
+/* leyla end */
 
 .social-menu-bar {
     position: relative;
