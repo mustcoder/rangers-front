@@ -26,7 +26,7 @@ define( 'DB_NAME', 'rangers' );
 define( 'DB_USER', 'root' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'mysql' );
+define( 'DB_PASSWORD', '' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
