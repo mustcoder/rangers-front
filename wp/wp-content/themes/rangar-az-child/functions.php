@@ -25,7 +25,7 @@ function rangar_az_scripts() {
 	], _S_VERSION, true );
 	
 	if (is_home()) {
-		wp_enqueue_style( 'rangar-az-slick', get_template_directory_uri() . "/assets/plugins/slick/slick.min.css", array(), _S_VERSION );
+		wp_enqueue_style( 'rangar-az-slick', get_template_directory_uri() . "/assets/plugins/slick/slick.css", array(), _S_VERSION );
 		wp_enqueue_script( 'rangar-az-slick', get_template_directory_uri() . '/assets/plugins/slick/slick.min.js', [
 			'rangar-az-jquery'
 		], _S_VERSION, true );
@@ -36,3 +36,6 @@ function rangar_az_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'rangar_az_scripts' );
+
+## CP
+require get_template_directory() . '/inc/cpt-articles.php';

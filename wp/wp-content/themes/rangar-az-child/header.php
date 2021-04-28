@@ -148,8 +148,5 @@
 <?php wp_body_open(); ?>
 <div id="page" class="container-fluid" style="bg-color:#000;">
 	<?php 
-	get_template_part( 'partials/layouts/navbar');
-	# include(locate_template('partials/layouts/navbar.php', false, false ) );
-	get_template_part( 'partials/layouts/slider');
-	get_template_part( 'partials/layouts/content');
+	get_template_part( 'partials/layouts/navbar');	# include(locate_template('partials/layouts/navbar.php', false, false ) );
 
