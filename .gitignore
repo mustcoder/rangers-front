@@ -9,6 +9,7 @@ lerna-debug.log*
 rangers-front.code-workspace
 .idea/
 package-lock.json
+wp-config.php
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
