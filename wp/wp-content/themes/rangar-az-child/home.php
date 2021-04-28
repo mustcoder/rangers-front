@@ -11,11 +11,9 @@
  *
  * @package ranger_az
  */
-
 get_header();
 ?>
-HOME PAGE
+
 
 <?php 
-get_sidebar();
 get_footer();

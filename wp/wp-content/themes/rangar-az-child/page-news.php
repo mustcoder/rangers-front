@@ -1,2 +1,1 @@
-
-News Page
+new page
