@@ -1,58 +1,16 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package ranger_az
- */
+<?php get_header() ?>
+<?php 
+
+$post_arguments = [
+    'post_type' => 'articles',
+    'posts_per_page' => 3
+ ];
+
+ // The Query
+$articles_query = new WP_Query($post_arguments);
 
 ?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<script src="https://kit.fontawesome.com/97aa96c74c.js"></script>
-	<style>
-		.social-menu-bar a{
-			color:#fff;
-		}
-		.social-menu-bar a:hover{
-			color:#fff;
-		}
-    #carousel-content {
-        background-color: black;
-        color: white;
-    }
-
-    #carousel-slick > div > div {
-        margin: 0 10px;
-        margin-top: 140px;
-    }
-
-   
-    .text-box {
-        background-color: black;
-    }
-    .header-text h2, .header-text p {
-        color:#fff;
-    }
-    .button2:hover {
-        background-color: rgb(100, 42, 42);
-    }
-
-    .inf{
-        text-align: center;             
-        color: white;
-        
-    }
-    .content-box{
-        background-color:#000
-    }
+<style>
     .social-menu-bar {
         position: relative;
         width: 100%;
@@ -97,12 +55,12 @@
         height: 14rem;
 
     }
-    .header p{
+    .header p {
         position: absolute;
         padding:10% 25%;
 
     }
-    .header h1{
+    .header h1 {
         padding: 4% 40%;
     }
     .header h1, .header p {
@@ -140,13 +98,41 @@
         margin: 40px 20px 0px;
     }
 </style>
-	</style>
-	<?php wp_head(); ?>
-</head>
+<div class="row">
+    <?php get_template_part('partials/layouts/page-title') ?>
+</div>
+<div class="row">
+    <div class="col-12 header-text">
+        <?php the_content() ?>
+    </div>
+    <?php if (have_posts()):?>
+        <?php while ($articles_query->have_posts() ): $articles_query->the_post() ?>
+            <div class= "col-12 col-md-4 col-lg-4">
+                <div class="box text-center">
+                <?php
+                    $image = get_field('articles_main_image');
+                    if (isset($image)):
+                        $image_title = $image['title'];
+                        $image_alt = $image['alt'];
+                        $image_src = $image['url'];
+    
+                ?>
+                    <img 
+                        src="<?= $image_src ?>" class="img-fluid"
+                        title="<?= $image_title ?>"
+                        alt="<?= $image_alt ?>"
+                    >
+                <?php
+                    endif;
+                ?>
 
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="container-fluid" style="bg-color:#000;">
-	<?php 
-	get_template_part( 'partials/layouts/navbar');	# include(locate_template('partials/layouts/navbar.php', false, false ) );
-
+                    <a href="<?= get_permalink() ?>" target="_blank" class="btn btn-danger">
+                        <?= get_the_title() ?>
+                    </a>
+                    <p><?php the_excerpt() ?></p>
+                </div>
+            </div>
+        <?php endwhile; ?>
+    <?php endif;?>
+</div>
+<?php get_footer() ?>

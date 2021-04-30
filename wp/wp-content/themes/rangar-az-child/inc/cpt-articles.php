@@ -14,17 +14,17 @@ function articles_register_post_type() {
     ],
     //'register_meta_box_cb' => 'testimonial_meta_box_cb',
     'menu_icon'          => 'http://rangers.sev/wp-content/themes/rangar-az-child/assets/img/articles.png',
-    'public'             => false,
+    'public'             => true,
     'publicly_queryable' => true,
     'show_ui'            => true,
     'show_in_menu'       => true,
     'query_var'          => true,
-    'rewrite'            => false, //['slug' => TESTIMONIAL_POST_SLUG],
+    'rewrite'            => ['slug' => ARTICLES_POST_SLUG], //['slug' => TESTIMONIAL_POST_SLUG],
     'capability_type'    => 'post',
     'has_archive'        => true,
     'hierarchical'       => false,
-    'menu_position'      => null,
-    'supports'           => ['title', 'slug'], //, 'editor'
+    'menu_position'      => 3, // null
+    'supports'           => ['title', 'excerpt', 'page-attributes', 'thumbnail'], //, 'editor'
   );
   register_post_type(ARTICLES_POST_TYPE , $args);
 }
