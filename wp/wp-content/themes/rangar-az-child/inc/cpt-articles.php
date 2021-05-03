@@ -23,7 +23,7 @@ function articles_register_post_type() {
     'capability_type'    => 'post',
     'has_archive'        => true,
     'hierarchical'       => false,
-    'menu_position'      => 3, // null
+    'menu_position'      => 6, // null
     'supports'           => ['title', 'excerpt', 'page-attributes', 'thumbnail'], //, 'editor'
   );
   register_post_type(ARTICLES_POST_TYPE , $args);

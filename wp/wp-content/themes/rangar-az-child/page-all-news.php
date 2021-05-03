@@ -4,7 +4,7 @@ get_header()
 <?php 
 
 $post_arguments = [
-    'post_type' => 'articles',
+    'post_type' => 'news',
     'posts_per_page' => 3
 ];
 

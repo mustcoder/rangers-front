@@ -46,6 +46,15 @@
                         </p>
                     </div>
                 </div>
+                <?php if (get_field('news_source')): ?>
+                <div class="row">
+                    <p class="col-sm-12">
+                        <a href="<?php the_field('news_source') ?>" target="_blank">
+                            <?php the_field('news_source') ?>
+                        </a>
+                    </p>
+                </div>
+                <?php endif; ?>
             </section>  
         </div>
         <div class="col-xs-12 col-sm-4">
