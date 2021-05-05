@@ -14,9 +14,11 @@
     text-decoration: none;
 }
 
-#uppermenu ul li>a:hover {
+#uppermenu ul li > a:hover,
+#uppermenu ul li > a.active
+ {
     border-bottom: 6px solid #cd1719;
-
+    box-sizing: content-box;
 }
 /* leyla end */
 

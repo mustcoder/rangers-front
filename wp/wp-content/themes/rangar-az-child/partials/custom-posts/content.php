@@ -9,6 +9,25 @@
            text-transform: uppercase;
         }
     </style>
+
+    <?php  
+        $post_type = 'all-' . get_post_type( get_the_ID());
+        // $page = get_posts(['name' =>  $post_type]);
+        $page_query = new WP_Query(
+            ['pagename' => $post_type]
+        );
+
+        while ($page_query->have_posts()): $page_query->the_post();
+        ?>
+        <div class="row">
+           <?php get_template_part('partials/layouts/page-title'); ?>
+        </div>
+        <?php
+           wp_reset_postdata();
+        endwhile;
+    ?>
+
+
     <div class="row">
         <div class="col-xs-12 col-sm-8">
             <section>
@@ -58,6 +77,6 @@
             </section>  
         </div>
         <div class="col-xs-12 col-sm-4">
-		    <?php get_template_part('partials/articles/sidebar'); ?>
+		    <?php get_template_part('partials/custom-posts/sidebar'); ?>
         </div>
     </div>

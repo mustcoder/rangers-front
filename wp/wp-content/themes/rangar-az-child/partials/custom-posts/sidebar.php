@@ -83,14 +83,8 @@
             <a href="#">Read More</a>
         </p>
         <div class="ara"></div>
-    <h3>LATEST NEWS</h3>
-        <p>Browse the latest news from the Academy</p>
-    <ul>
-        <li><span><a href="#">Fcv players to attend</a></span></li>
-        <li><span><a href="#">Meet us remotly for our next Virtual open day</a></span></li>
-        <li><span><a href="#">Join us this season</a></span></li>
-        <li><span><a href="#">Fcv players to attend</a></span></li>
-        <li><span><a href="#">Meet us remotly for our</a></span></li>
-    </ul>      
+    
+        <?php dynamic_sidebar('latest-sidebar') ?>
+
 </div>
 <!--Sidebar End-->

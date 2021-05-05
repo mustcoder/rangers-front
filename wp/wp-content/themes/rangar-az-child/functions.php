@@ -45,6 +45,7 @@ register_nav_menus(array(
   )
 );
 
+  
 class My_Custom_Primary_Nav_Walker extends Walker_Nav_Menu {
 
 //   function start_lvl(&$output, $depth = 0, $args = array()) {
@@ -69,7 +70,7 @@ class My_Custom_Primary_Nav_Walker extends Walker_Nav_Menu {
 
   function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
     if ( $element->current )
-      $element->classes[] = 'active-page';
+      $element->classes[] = 'active';
 
 	if ( $depth === 0 ) {
 		$element->classes[] = 'nav-link text-dark'; 
@@ -91,6 +92,24 @@ class My_Custom_Primary_Nav_Walker extends Walker_Nav_Menu {
   }
 }
 
+function rangers_widgets_init() {
+	register_sidebar([
+		'name'          => esc_html__( 'Latest Sidebar', 'rangers' ),
+		'id'            => 'latest-sidebar',
+		'description'   => esc_html__( 'Add widgets here.', 'rangers' ),
+		// 'before_widget' => '<section id="%1$s" class="widget text-left %2$s">',
+		// 'after_widget'  => '</section>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	  ]);
+}
+add_action( 'widgets_init', 'rangers_widgets_init' );
+
 ## CPTs
-require get_template_directory() . '/inc/cpt-news.php';
-require get_template_directory() . '/inc/cpt-articles.php';
+require get_template_directory() . '/inc/cpt/cpt-news.php';
+require get_template_directory() . '/inc/cpt/cpt-articles.php';
+
+## Widgets
+require get_template_directory() . '/inc/widgets/latest-sidebar.php';
+
+register_widget( 'widget_rangers_latest_sidebar' );
