@@ -6,6 +6,55 @@ if ( ! defined( '_S_VERSION' ) ) {
 }
 
 /**
+ * Remove version of WP
+ *
+ * @return void
+ */
+function wpbeginner_remove_version() {
+	return '';
+}
+add_filter('the_generator', 'wpbeginner_remove_version');
+
+// Changing excerpt length
+function new_excerpt_length($length) {
+	return 30;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
+	 
+// Changing excerpt more
+function new_excerpt_more($more) {
+	return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+// Function to change email address
+ 
+// function my_sender_email( $original_email_address ) {
+//     return 'rashad@example.com';
+// }
+ 
+// Function to change sender name
+// function my_sender_name( $original_email_from ) {
+//     return 'Rashad Aliyev';
+// }
+ 
+// Hooking up our functions to WordPress filters 
+// add_filter( 'wp_mail_from', 'my_sender_email' );
+// add_filter( 'wp_mail_from_name', 'my_sender_name' );
+
+// update_option( 'siteurl', 'http://example.com' );
+// update_option( 'home', 'http://example.com' );
+
+// function wpb_imagelink_setup() {
+//     $image_set = get_option( 'image_default_link_type' );
+     
+//     if ($image_set !== 'none') {
+//         update_option('image_default_link_type', 'none');
+//     }
+// }
+// add_action('admin_init', 'wpb_imagelink_setup', 10);
+
+/**
  * Enqueue scripts and styles.
  */
 function rangar_az_scripts() {
@@ -94,11 +143,21 @@ class My_Custom_Primary_Nav_Walker extends Walker_Nav_Menu {
 
 function rangers_widgets_init() {
 	register_sidebar([
-		'name'          => esc_html__( 'Latest Sidebar', 'rangers' ),
-		'id'            => 'latest-sidebar',
+		'name'          => esc_html__( 'Inner Page Sidebar', 'rangers' ),
+		'id'            => 'inner-page-sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'rangers' ),
-		// 'before_widget' => '<section id="%1$s" class="widget text-left %2$s">',
-		// 'after_widget'  => '</section>',
+		'before_widget' => '<section class="widget">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	]);
+	
+	register_sidebar([
+		'name'          => esc_html__( 'Home Slick Carousel', 'rangers' ),
+		'id'            => 'home-slick-carousel',
+		'description'   => esc_html__( 'This will show home page carousel', 'rangers' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
 		'before_title'  => '<h3>',
 		'after_title'   => '</h3>',
 	  ]);
@@ -111,5 +170,14 @@ require get_template_directory() . '/inc/cpt/cpt-articles.php';
 
 ## Widgets
 require get_template_directory() . '/inc/widgets/latest-sidebar.php';
+require get_template_directory() . '/inc/widgets/inner-post-preview.php';
 
 register_widget( 'widget_rangers_latest_sidebar' );
+register_widget( 'widget_rangers_inner_post_preview' );
+
+## Taxonomies
+require get_template_directory() . '/inc/taxonomies/news-taxonomy.php';
+require get_template_directory() . '/inc/taxonomies/article-taxonomy.php';
+
+//hook into the init action and call rangers_register_taxonomy_article_categories when it fires
+add_action( 'init', 'rangers_register_taxonomy_article_categories' );
