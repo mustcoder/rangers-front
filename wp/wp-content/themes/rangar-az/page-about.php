@@ -19,7 +19,7 @@ $a = 5;
 var_dump($a);
 ?>
 
-HELLO
+HELLO 
 
 <?php
 get_footer();
