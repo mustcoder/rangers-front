@@ -1,32 +1,30 @@
-import { Component, Fragment } from 'react';
+import {
+  BrowserRouter as Router, Switch, Route
+} from 'react-router-dom';
+
+import PrimaryNavigationComponent from './components/primary-navigation/primary-navigation.component.jsx';
+import HomePage from './pages/home.page.jsx';
+import AboutPage from './pages/about.page.jsx';
 import logo from './logo.svg';
 import './App.css';
 
-export const AppComponent = (props) => {
+const AppComponent = () => {
 //  const name = props.name + "-2"; const age = props.age + "-2";
- const { name, age } = props; 
 
   return (
-    <>
-    <h1> My name is {name} and my age is {age} </h1>
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-    </>
-    
+    <Router>
+      <div>
+        <PrimaryNavigationComponent />
+        <Switch>
+          <Route path="/about">
+            <AboutPage />
+          </Route>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
