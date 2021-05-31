@@ -17,13 +17,14 @@ export const initialGlobalState = {
   user: {
     'name': 'Elman',
     'age': 45
-  }
+  },
+  themeMode: 'white'
 }
 
 // const localAppState = getStorageKey(APP_STATE_KEY);
 // const AppContext = createContext(localAppState || initialGlobalState);
 
-const AppContext = createContext(initialGlobalState);
+const AppContext = createContext(initialGlobalState );
 
 const AppProvider = ({ children }) => {
   // const [appState, dispatch] = useReducer(appReducer, localAppState || initialGlobalState);
@@ -35,9 +36,9 @@ const AppProvider = ({ children }) => {
   //   // });
   // }
 
-  // useEffect(() => {
-  //   saveStorageKey(APP_STATE_KEY, appState);
-  // }, [appState]);
+  useEffect(() => {
+    // saveStorageKey(APP_STATE_KEY, appState);
+  }, [appState]);
 
 
   const value = useMemo(() => [appState, dispatch], [appState]);
