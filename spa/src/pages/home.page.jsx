@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
+
 const HomePage = () => {
     const [ourColor, setOurColor] = React.useState('blue');
     const [ourPadding, setOurPadding] = React.useState('10px');

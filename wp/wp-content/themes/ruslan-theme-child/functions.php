@@ -24,19 +24,23 @@ function rr_scripts() {
 		'rr-jquery'
 	], _S_VERSION, true );
 	
-	if (is_home()) {
+
 		wp_enqueue_style( 'ruslan-theme-slick', get_template_directory_uri() . "/assets/plugins/slick/slick.css",  array(), _S_VERSION );
         wp_enqueue_style( 'slick-theme-css',  get_template_directory_uri()  . '/assets/plugins/slick/slick-theme.css', array(), _S_VERSION );
 		wp_enqueue_script( 'ruslan-theme-slick', get_template_directory_uri() . '/assets/plugins/slick/slick.min.js', [
 			'rr-jquery'
 		], _S_VERSION, true );
-    }
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'rr_scripts' );
+
+
+
+
 //Register new menu
 register_nav_menus(array(
     'primary' => __('Header Menu'),
@@ -48,9 +52,9 @@ register_nav_menus(array(
 
 class My_Custom_Primary_Nav_Walker extends Walker_Nav_Menu {
 
-//   function start_lvl(&$output, $depth = 0, $args = array()) {
-//     $output .= "\n<ul class=\"nav nav-menu-dropdown dropdown-menu font-assist-b\">\n";
-//   }
+   function start_lvl(&$output, $depth = 0, $args = array()) {
+     $output .= "\n<ul class=\"nav nav-menu-dropdown dropdown-menu font-assist-b\">\n";
+   }
 
     function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
         $item_html = '';
@@ -60,10 +64,10 @@ class My_Custom_Primary_Nav_Walker extends Walker_Nav_Menu {
             $item_html = str_replace( '<a', '<a href="'.$item->url.'" class="nav-link text-dark"', $item_html );
         }
 
-        // if ( $item->is_dropdown && $depth === 0 ) {
-        //   $item_html = str_replace( '<a', '<a href="'.$item->url.'"', $item_html );
-        //   $item_html = str_replace( '</a', '<i class="fa fa-chevron-down"></i></a', $item_html );
-        // }
+         if ( $item->is_dropdown && $depth === 0 ) {
+           $item_html = str_replace( '<a', '<a href="'.$item->url.'"', $item_html );
+           $item_html = str_replace( '</a', '<i class="fa fa-chevron-down"></i></a', $item_html );
+         }
 
         $output .= $item_html;
     }
@@ -76,17 +80,17 @@ class My_Custom_Primary_Nav_Walker extends Walker_Nav_Menu {
             $element->classes[] = 'nav-link text-dark';
         }
 
-        // $element->is_dropdown = !empty( $children_elements[$element->ID] );
+         $element->is_dropdown = !empty( $children_elements[$element->ID] );
 
-        // if ( $element->is_dropdown ) {
-        //   if ( $depth === 0 ) {
-        //     $element->classes[] = 'nav-link text-dark';
-        //   } elseif ( $depth === 1 ) {
-        //     // Extra level of dropdown menu,
-        //     // as seen in http://twitter.github.com/bootstrap/components.html#dropdowns
-        //     $element->classes[] = 'dropdown-submenu';
-        //   }
-        // }
+         if ( $element->is_dropdown ) {
+           if ( $depth === 0 ) {
+             $element->classes[] = 'nav-link text-dark';
+           } elseif ( $depth === 1 ) {
+              //Extra level of dropdown menu,
+              //as seen in http://twitter.github.com/bootstrap/components.html#dropdowns
+             $element->classes[] = 'dropdown-submenu';
+           }
+         }
 
         parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
     }

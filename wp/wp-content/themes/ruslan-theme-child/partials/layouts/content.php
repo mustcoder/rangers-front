@@ -88,6 +88,15 @@
                 <p class="inf">text about academy</p>
             </div>
         </div>
+        <div>
+            <div class="about_item">
+                <div class="about_img">
+                    <img src="http://rangers.sev/wp-content/themes/rangar-az-child/assets/img/pexels-omar-ramadan-5886522.jpg" class="img-thumbnail" alt="foto">
+                </div>
+                <a href="#" class="btn btn-danger">Learn more</a>
+                <p class="inf">text about academy</p>
+            </div>
+        </div>
     </div>
 </div>
 

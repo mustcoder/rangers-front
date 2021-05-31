@@ -35,7 +35,7 @@
                 <?php the_title() ?>
             </h4>
             <?php
-            $image = get_field('image_article');
+            $image = get_field('articles_main_image');
             if (isset($image)):
                 $image_title = $image['title'];
                 $image_alt = $image['alt'];
@@ -61,7 +61,7 @@
                 </div>
                 <div class="col-sm-6">
                     <p class="font-weight-bold font-italic">
-                        <?php the_field('date_published') ?>
+                        <?php the_field('article_published_date') ?>
                     </p>
                 </div>
             </div>

@@ -20,6 +20,7 @@ get_header();
             get_template_part( 'partials/layouts/content');
             get_template_part( 'partials/layouts/subscription-form');
 
+
 ?>
 
 <?php 
