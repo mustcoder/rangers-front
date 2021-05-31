@@ -1,22 +1,31 @@
 import React, { useEffect, useRef } from 'react';
+import {useAppContext} from '../context/providers/app.provider';
+
 
 
 const HomePage = () => {
+    //const [{themeMode}] = useAppContext();
+    const [appState] = useAppContext();
+    const {themeMode} = appState;
+    
     const [ourColor, setOurColor] = React.useState('blue');
     const [ourPadding, setOurPadding] = React.useState('10px');
 
+
     useEffect(() => {
-        console.log('Mounted');
-        return () => {
-            console.log('Unmounted!!!');
+        console.log('Home Page Mounted');
+        console.log("GET SERVER INTIAL DATA!!!");
+        return function() {
+            console.log('Home Page Unmounted!!!');
         }
     }, []);
 
     useEffect(() => {
         console.log("Updated", ourColor, ourPadding);
+        // return () => {
+        //     console.log('State Unmounted');
+        // }
     }, [ourColor, ourPadding]);
-
-    console.log('Re-rendered');
 
     const handleButtonClick = (ev) => {
         setOurColor(ourColor == 'red' ? 'blue' : 'red');
@@ -34,6 +43,7 @@ const HomePage = () => {
                     }
                 }>Home Page</span>
             </h1>
+            <h5>HOME Our theme is {themeMode}</h5>
             <button onClick={handleButtonClick}>Click Me!!</button>
         </div>
     );

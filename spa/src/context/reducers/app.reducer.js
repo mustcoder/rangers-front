@@ -1,12 +1,14 @@
 import appActionTypes from "../actions/app.actions";
-import {initialGlobalState} from "@back-package/context/providers/app.provider";
+import {initialGlobalState} from "../providers/app.provider";
 
 export default (state, action) => {
-  const {type, payload } = action;
+  const {type, payload} = action;
   switch ( type ) {
 
-    case appActionTypes.APP_TOGGLE_LOADER:
-      return toggleLoader(state, payload);
+    case appActionTypes.CHANGE_THEME_MODE:
+      return {
+        ...state, themeMode: payload.themeMode
+      };
 
     case appActionTypes.SHOW_MODAL:
       const { title, body } = payload

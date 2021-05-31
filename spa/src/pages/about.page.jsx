@@ -1,40 +1,35 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, Fragment} from 'react';
+
+import {useAppContext, appActionTypes} from '../context/providers/app.provider';
 
 const AboutPage = () => {
-    const [ourColor, setOurColor] = React.useState ('yellow');
-    const [ourPadding, setOurPadding] = React.useState ('40px');
+    const [appState, appDispatch] = useAppContext();
+    const {themeMode} = appState;
 
     useEffect(() => {
-        console.log ('Mounted');
+        console.log("About Page mounted");
         return () => {
-            console.log('Unmounted!!!');
+            console.log("About Page UNmounted");
         }
     }, []);
 
-    useEffect(() => {
-        console.log("Updated", ourColor, ourPadding);
-    },  [ourColor,ourPadding]);
-
-    console.log('Re-rendered');
-
-    const handleButtonClick = (ev) => {
-        setOurColor(ourColor == 'black' ? 'yellow' : 'black');
-        setOurPadding(ourPadding === '200px' ? '40px' : '200px')
+    const handleChangeTheme = (ev) => {
+        appDispatch({
+            type: appActionTypes.CHANGE_THEME_MODE, 
+            payload: {
+                themeMode: (themeMode == 'white' ? 'red' : 'white')
+            }
+        });
     }
 
     return (
-        <div>
-            <h1>This is
-                <span style={
-                    {
-                        color: ourColor,
-                        paddingLeft: ourPadding,
-                        minWidth: '35px'
-                    }
-                }>About Page</span>
-            </h1>
-            <button onClick={handleButtonClick}>Click to me!!!</button>    
-        </div>
+        <Fragment>
+            <h1>This is About Page</h1>
+            <h5>Our theme is {themeMode}</h5>
+            <button onClick={handleChangeTheme}>
+                Change Theme Mode
+            </button>
+        </Fragment>
     );
 }
 

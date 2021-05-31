@@ -1,6 +1,7 @@
 import {
   BrowserRouter as Router, Switch, Route
 } from 'react-router-dom';
+import {AppProvider} from './context/providers/app.provider';
 
 import PrimaryNavigationComponent from './components/primary-navigation/primary-navigation.component.jsx';
 import HomePage from './pages/home.page.jsx';
@@ -13,17 +14,19 @@ const AppComponent = () => {
 
   return (
     <Router>
-      <div>
-        <PrimaryNavigationComponent />
-        <Switch>
-          <Route path="/about">
-            <AboutPage />
-          </Route>
-          <Route path="/">
-            <HomePage />
-          </Route>
-        </Switch>
-      </div>
+      <AppProvider>
+        <div>
+          <PrimaryNavigationComponent />
+          <Switch>
+            <Route path="/about" >
+              <AboutPage />
+            </Route>
+            <Route path="/">
+              <HomePage />
+            </Route>
+          </Switch>
+        </div>
+      </AppProvider>
     </Router>
   );
 }
