@@ -6,6 +6,7 @@ import {AppProvider} from './context/providers/app.provider';
 import PrimaryNavigationComponent from './components/primary-navigation/primary-navigation.component.jsx';
 import HomePage from './pages/home.page.jsx';
 import AboutPage from './pages/about.page.jsx';
+import ProfilPage from './pages/profil.page.jsx';
 import logo from './logo.svg';
 import './App.css';
 
@@ -18,12 +19,15 @@ const AppComponent = () => {
         <div>
           <PrimaryNavigationComponent />
           <Switch>
+            <Route path="/profil" >
+              <ProfilPage />
+            </Route>
             <Route path="/about" >
               <AboutPage />
             </Route>
             <Route path="/">
               <HomePage />
-            </Route>
+            </Route>            
           </Switch>
         </div>
       </AppProvider>
