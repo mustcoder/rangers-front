@@ -13,6 +13,9 @@ const PrimaryNavigationComponent = () => {
             <li>
               <Link to="/about">About</Link>
             </li>
+            <li>
+              <Link to="/contacts">Contact</Link>
+            </li>
           </ul>
         </nav>
     );
