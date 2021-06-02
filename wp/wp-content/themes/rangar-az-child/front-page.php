@@ -14,9 +14,11 @@
 get_header();
 ?>
 
+    <div id="app"></div>
+
 	<?php 
-        get_template_part( 'partials/layouts/slider');
-        get_template_part( 'partials/layouts/content');
+        // get_template_part( 'partials/layouts/slider');
+        // get_template_part( 'partials/layouts/content');
     ?>
 
 <?php 

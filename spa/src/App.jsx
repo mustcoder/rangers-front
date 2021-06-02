@@ -18,6 +18,9 @@ const AppComponent = () => {
         <div>
           <PrimaryNavigationComponent />
           <Switch>
+            <Route path="/contacts" >
+              <AboutPage />
+            </Route>
             <Route path="/about" >
               <AboutPage />
             </Route>
