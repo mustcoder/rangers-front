@@ -5,6 +5,9 @@ const PrimaryNavigationComponent = () => {
         <nav>
           <ul>
             <li>
+              <Link to="/profil">Profil</Link>
+            </li>
+            <li>
               <Link to="/">Home</Link>
             </li>
             <li>
