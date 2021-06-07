@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/mustcoder/rangers-front#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "bootstrap-icons": "^1.4.1",
     "ejs": "^3.1.6",

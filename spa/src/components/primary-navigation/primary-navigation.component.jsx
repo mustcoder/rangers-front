@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom';
 const PrimaryNavigationComponent = () => {
     return(
         <nav>
-          <ul>
-            <li>
-              <Link to="/profil">Profil</Link>
-            </li>
+          <ul>           
             <li>
               <Link to="/">Home</Link>
             </li>
