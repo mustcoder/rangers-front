@@ -8,6 +8,7 @@ import HomePage from './pages/home.page.jsx';
 import AboutPage from './pages/about.page.jsx';
 import logo from './logo.svg';
 import './App.css';
+import AuthPage from './pages/auth.page';
 
 
 
@@ -22,6 +23,9 @@ const AppComponent = () => {
           <Switch>          
             <Route path="/about" >
               <AboutPage />
+            </Route>
+            <Route path="/auth" >
+              <AuthPage />
             </Route>
             <Route path="/">
               <HomePage />
