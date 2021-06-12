@@ -7,6 +7,7 @@ import LoaderComponent from '../components/loader/loader-component';
 import HeaderComponentCommon from '../components/common/header-component.common';
 
 
+
 const HomePage = () => {
     // http://rangers.sev/wp-json/wp/v2/pages/12
     // title / content

@@ -10,6 +10,8 @@ import logo from './logo.svg';
 import './App.css';
 import AuthPage from './pages/auth.page';
 
+
+
 const AppComponent = () => {
 //  const name = props.name + "-2"; const age = props.age + "-2";
 
@@ -18,10 +20,7 @@ const AppComponent = () => {
       <AppProvider>
         <div>
           <PrimaryNavigationComponent />
-          <Switch>
-            <Route path="/contacts" >
-              <AboutPage />
-            </Route>
+          <Switch>          
             <Route path="/about" >
               <AboutPage />
             </Route>
@@ -30,7 +29,7 @@ const AppComponent = () => {
             </Route>
             <Route path="/">
               <HomePage />
-            </Route>
+            </Route>            
           </Switch>
         </div>
       </AppProvider>

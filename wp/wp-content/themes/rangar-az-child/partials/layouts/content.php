@@ -1,38 +1,93 @@
-    <div class="row text-box">
-        <div class="col-md-12 text-center header-text" >
+<style>
+
+    #carousel-content {
+        background-color: black;
+        color: white;                
+    }
+
+    #carousel > div > div {
+        margin: 0 10px;
+        margin-top: 100px;        
+    }
+
+    #carousel {
+        display: flex;
+    }
+    
+    .container {
+        background-color: black;
+        color: white;
+        text-align: center;
+        width: 100%;
+        height: 450px;
+    }       
+
+    .btn:hover {
+        background-color: rgb(100, 42, 42);
+    }
+
+    .inf{
+        text-align: center;             
+        color: white;                
+    }
+  
+</style>
+
+
+<div id="carousel-content" class="row">
+    <div class="row">
+        <div class="col-xs-12 text-center" style="width: 100%;">
             <h2>FOOTBALL</h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eius, molestiae maiores quibusdam eveniet deserunt, assumenda tempora aspernatur molestias voluptatem dolor. x blanditiis!</p>  
         </div>
     </div>
-<div class="row content-box">
-    <div id="carousel-slick">
-        <div class="about_item"> 
-            <div class="about_img">
-                <img src="https://scontent.fgyd4-2.fna.fbcdn.net/v/t1.6435-9/92153950_2787782997964588_7493634861027033088_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=973b4a&_nc_ohc=AyR7Rvl7OI4AX9IRQZs&_nc_ht=scontent.fgyd4-2.fna&oh=f61441e399dce1e8d5b94a4b2b6ffd8e&oe=60AE89C1" class="img-thumbnail" alt="foto">
+    <div id="carousel" class="container">
+        <div>
+            <div class="about_item"> 
+                <div class="about_img">
+                    <img src="http://rangers.sev/wp-content/themes/rangar-az-child/assets/img/pexels-omar-ramadan-5886522.jpg" class="img-thumbnail" alt="foto">
+                </div>
+                <a href="#" class="btn btn-danger">Learn more</a>
+                <p class="inf">text about academy</p>
             </div>
-            <a href="#" class="btn btn-danger button2">Learn more</a>
-            <p class="inf">text about academy</p>
         </div>
-        <div class="about_item"> 
-            <div class="about_img">
-                <img src="https://scontent.fgyd4-2.fna.fbcdn.net/v/t1.6435-9/92153950_2787782997964588_7493634861027033088_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=973b4a&_nc_ohc=AyR7Rvl7OI4AX9IRQZs&_nc_ht=scontent.fgyd4-2.fna&oh=f61441e399dce1e8d5b94a4b2b6ffd8e&oe=60AE89C1" class="img-thumbnail" alt="foto">
+        <div>
+            <div class="about_item"> 
+                <div class="about_img">
+                    <img src="http://rangers.sev/wp-content/themes/rangar-az-child/assets/img/pexels-omar-ramadan-5886522.jpg" class="img-thumbnail" alt="foto">
+                </div>
+                <a href="#" class="btn btn-danger">Learn more</a>
+                <p class="inf">text about academy</p>
             </div>
-            <a href="#" class="btn button btn-danger button2">Learn more</a>
-            <p class="inf">text about academy</p>
         </div>
-        <div class="about_item"> 
-            <div class="about_img">
-                <img src="https://scontent.fgyd4-2.fna.fbcdn.net/v/t1.6435-9/92153950_2787782997964588_7493634861027033088_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=973b4a&_nc_ohc=AyR7Rvl7OI4AX9IRQZs&_nc_ht=scontent.fgyd4-2.fna&oh=f61441e399dce1e8d5b94a4b2b6ffd8e&oe=60AE89C1" class="img-thumbnail" alt="foto">
+        <div>
+            <div class="about_item"> 
+                <div class="about_img">
+                    <img src="http://rangers.sev/wp-content/themes/rangar-az-child/assets/img/pexels-omar-ramadan-5886522.jpg" class="img-thumbnail" alt="foto">
+                </div>
+                <a href="#" class="btn btn-danger">Learn more</a>
+                <p class="inf">text about academy</p>
             </div>
-            <a href="#" class="btn btn-danger button2">Learn more</a>
-            <p class="inf">text about academy</p>
         </div>
-        <div class="about_item"> 
-            <div class="about_img">
-                <img src="https://scontent.fgyd4-2.fna.fbcdn.net/v/t1.6435-9/92153950_2787782997964588_7493634861027033088_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=973b4a&_nc_ohc=AyR7Rvl7OI4AX9IRQZs&_nc_ht=scontent.fgyd4-2.fna&oh=f61441e399dce1e8d5b94a4b2b6ffd8e&oe=60AE89C1" class="img-thumbnail" alt="foto">
+        <div>
+            <div class="about_item"> 
+                <div class="about_img">
+                    <img src="http://rangers.sev/wp-content/themes/rangar-az-child/assets/img/pexels-omar-ramadan-5886522.jpg" class="img-thumbnail" alt="foto">
+                </div>
+                <a href="#" class="btn btn-danger">Learn more</a>
+                <p class="inf">text about academy</p>
             </div>
-            <a href="#" class="btn btn-danger button2">Learn more</a>
-            <p class="inf">text about academy</p>
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
