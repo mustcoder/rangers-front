@@ -3,21 +3,6 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 
 const PrimaryNavigationComponent = () => {
     return(
-<<<<<<< HEAD
-        <nav>
-          <ul>           
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/contacts">Contact</Link>
-            </li>
-          </ul>
-        </nav>
-=======
       <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand href="#home">SPA</Navbar.Brand>
@@ -31,7 +16,6 @@ const PrimaryNavigationComponent = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
->>>>>>> b4ede4d6ef3adafe2c8a09d9f80e27e7bc48c4e1
     );
 }
 

@@ -92,7 +92,7 @@ const LoginViewAuthComponent = () => {
         request.then((res) => {
             /**
              * {
-                    errros: [],
+                    errors: [],
                     user: {
                         "name": "Elman",
                         "age": 23
